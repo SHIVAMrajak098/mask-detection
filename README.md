@@ -119,6 +119,14 @@ Run the script to scan images
 
 - Saves result as scanned_result.png
 
+  ## 📸 Screenshot Examples
+
+### Face Scanning Without Mask
+<div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+  <img src="1.png" alt="Face detection screenshot - Asian male without mask, showing red bounding box and 'No Mask' warning" width="45%" />
+  <img src="2.png" alt="Face detection screenshot - Caucasian female without mask, with detection landmarks and warning text" width="45%" />
+</div>
+
 ### Face Scanning With Mask
 <div style="display: flex; gap: 20px; flex-wrap: wrap;">
   <img src="3.png" alt="Face detection screenshot - African-American male with blue surgical mask, showing green bounding box and 'Mask Detected' confirmation" width="45%" />
