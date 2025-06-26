@@ -119,6 +119,17 @@ Run the script to scan images
 
 - Saves result as scanned_result.png
 
+### Face Scanning With Mask
+<div style="display: flex; gap: 20px; flex-wrap: wrap;">
+  <img src="3.png" alt="Face detection screenshot - African-American male with blue surgical mask, showing green bounding box and 'Mask Detected' confirmation" width="45%" />
+  <img src="4.png" alt="Face detection screenshot - Senior woman with patterned cloth mask, showing detection confidence score of 98%" width="45%" />
+</div>
+
+Detection Confidence Legend:
+- 🔴 Red border: No mask detected (confidence > 90%)
+- 🟢 Green border: Mask detected (confidence > 85%)
+- ⚠️ Yellow border: Uncertain prediction (confidence 70-85%)
+
 
 ## 🔍 Classes Detected
 ✅ with_mask
