@@ -68,10 +68,31 @@ Manually download the dataset from Kaggle:
 
 - Extract it into a folder called dataset/ inside your project root.
 
+## 🧼 Data Preprocessing (prepared_faces.py)
+Before training, the dataset needs to be cleaned and prepared.
+The raw Kaggle Face Mask Detection dataset provides Pascal VOC-style XML annotations that describe bounding boxes for different mask categories.
+
+We use the script prepared_faces.py to:
+
+🔍 Parse each XML annotation file
+
+🖼️ Crop the face regions from the original images based on bounding box coordinates
+
+📁 Organize and save them into class-wise folders inside the faces/ directory:
+
+```
+faces/
+├── with_mask/
+├── without_mask/
+└── mask_weared_incorrect/ 
+```
+This ensures the model is trained directly on cropped face images, reducing noise and improving classification performance.
+
+💡 This step is essential before running train.py, as it prepares the training data in the format required by Keras’ flow_from_directory.
 
 ## Train the Model
 Train the MobileNetV2-based mask detector:
-```bash
+```
 python train.py
 ```
 - The trained model will be saved as `mask_detector_model.h5`.
