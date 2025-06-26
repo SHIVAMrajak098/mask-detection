@@ -31,7 +31,7 @@ XML-based dataset parsing for face crops
 ## 📁 Project Structure
 ```
 
-├── prepared_faces.py           # Prepares face images from XML annotations
+├── prepare_faces.py           # Prepares face images from XML annotations
 ├── train.py                    # Trains the MobileNetV2 mask classifier
 ├── scan_image.py               # Runs detection on a given image
 ├── detectmaskedvideo.py       # Real-time mask detection via webcam
@@ -69,7 +69,7 @@ Manually download the dataset from Kaggle:
 - Extract it into a folder called dataset/ inside your project root.
 
 
-## 🧼 Data Preprocessing (prepared_faces.py)
+## 🧼 Data Preprocessing (prepare_faces.py)
 Before training, the dataset needs to be cleaned and prepared.
 The raw Kaggle Face Mask Detection dataset provides Pascal VOC-style XML annotations that describe bounding boxes for different mask categories.
 
@@ -88,7 +88,7 @@ faces/
 └── mask_weared_incorrect/
 ```
 
-**RUN** ``` python prepared_faces.py```
+**RUN** ``` python prepare_faces.py```
 
 ## Train the Model
 Train the MobileNetV2-based mask detector:
