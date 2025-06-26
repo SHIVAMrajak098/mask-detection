@@ -159,11 +159,14 @@ uncertain (low confidence)
 
 > Developed with 💻 and ☕ by **[Shivam Rajak](https://github.com/SHIVAMrajak098)**
 
-📫 **Contact me here:**
+## 🙋 Contact
 
-- GitHub: [github.com/SHIVAMrajak098](https://github.com/SHIVAMrajak098)
-- LinkedIn: [linkedin.com/in/shivam-rajak](www.linkedin.com/in/shivam-rajak-3177102b8)
-- Email: [shivamrajak098@gmail.com](mailto:shivamrajak.098@gmail.com)
+Made with ❤️ by **Shivam Rajak**
+
+- 📧 Email: [shivamrajak.098@gmail.com](mailto:shivamrajak.098@gmail.com)  
+- 🔗 LinkedIn: [linkedin.com/in/shivam-rajak-3177102b8](https://www.linkedin.com/in/shivam-rajak-3177102b8)  
+- 🧠 GitHub: [github.com/SHIVAMrajak098](https://github.com/SHIVAMrajak098)
+
 
 ## Credits
 - [Kaggle Face Mask Detection Dataset](https://www.kaggle.com/datasets/andrewmvd/face-mask-detection)
