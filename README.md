@@ -31,13 +31,13 @@ XML-based dataset parsing for face crops
 ## 📁 Project Structure
 ```
 
-
+├── prepared_faces.py           # Prepares face images from XML annotations
 ├── train.py                    # Trains the MobileNetV2 mask classifier
 ├── scan_image.py               # Runs detection on a given image
 ├── detectmaskedvideo.py       # Real-time mask detection via webcam
 ├── requirements.txt            # All dependencies for the project
-├── image.png                   # Add image in the root folder to scan
-
+└── scanned_result.png          # Output image (after running scan_image.py)
+```
 
 
 ## 🔧 Installation
@@ -68,6 +68,7 @@ Manually download the dataset from Kaggle:
 
 - Extract it into a folder called dataset/ inside your project root.
 
+
 ## 🧼 Data Preprocessing (prepared_faces.py)
 Before training, the dataset needs to be cleaned and prepared.
 The raw Kaggle Face Mask Detection dataset provides Pascal VOC-style XML annotations that describe bounding boxes for different mask categories.
@@ -84,50 +85,18 @@ We use the script prepared_faces.py to:
 faces/
 ├── with_mask/
 ├── without_mask/
-└── mask_weared_incorrect/ 
+└── mask_weared_incorrect/
 ```
-This ensures the model is trained directly on cropped face images, reducing noise and improving classification performance.
 
-💡 This step is essential before running train.py, as it prepares the training data in the format required by Keras’ flow_from_directory.
+**RUN** ``` python prepared_faces.py```
 
 ## Train the Model
 Train the MobileNetV2-based mask detector:
-```
+```bash
 python train.py
 ```
 - The trained model will be saved as `mask_detector_model.h5`.
 - A training plot will be saved as `training_plot.png`.
-
-## ⚙️ Training Details
-Image Size: 224x224 (MobileNetV2 default)
-
-**Augmentation:**
-
-- Rotation (20°), Zoom (15%), Width/Height shift (20%)
-
-- Shear, Horizontal flip, Fill mode: Nearest
-
-- Validation Split: 20% (via ImageDataGenerator)
-
-- Batch Size: 32
-
-**Epochs:**
-
-- Phase 1: 30 epochs (base model frozen)
-
-- Phase 2: 10 epochs (last 20 layers unfrozen for fine-tuning)
-
-##  🔧 Optimizer & Loss
-**Optimizer:** Adam with learning_rate=1e-5
-
-**Loss Function:** Categorical Crossentropy
-
-**Callbacks:**
-
-- EarlyStopping (patience=5)
-
-- ModelCheckpoint (best model saved)
-
 
 
 ## Real-Time Mask Detection
